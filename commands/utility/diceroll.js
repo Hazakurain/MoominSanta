@@ -12,13 +12,6 @@ module.exports = {
         const colour = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
         const randColour = colour[Math.floor(Math.random() * colour.length)];
         const picture = new AttachmentBuilder("./assets/img/D20WHITE.png")
-        const diceRollEmbed = new EmbedBuilder()
-            .setColor(randColour)
-            .setThumbnail('attachment://D20WHITE.png')
-            .setTitle(`You rolled the dice and ...`)
-            .setDescription(`You rolled ${randomRoll} !`)
-
-
         if(randomRoll === "1"){
             const diceRollEmbed = new EmbedBuilder()
                 .setColor(randColour)
