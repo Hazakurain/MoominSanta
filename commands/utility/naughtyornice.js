@@ -3,8 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder} = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('naughtyornice')
-        .setDescription('Determine if you are a cutie patootie, or a naughty patootie and win a role!')
-        .addUserOption(option => option.setName('user').setDescription('The user you want to get your infos on').setRequired(false)),
+        .setDescription('Determine if you are a cutie patootie, or a naughty patootie and win a role!'),
 
     async execute(interaction) {
         const user = interaction.options.getUser('user') || interaction.user;
