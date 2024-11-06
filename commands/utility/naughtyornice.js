@@ -9,18 +9,32 @@ module.exports = {
     async execute(interaction) {
         const user = interaction.options.getUser('user') || interaction.user;
         const member = await interaction.guild.members.fetch(user.id);
-        const icon = user.displayAvatarURL();
-        const tag = user.tag;
-        const colour = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Magenta"];
-        const randColour = colour[Math.floor(Math.random() * colour.length)];
+        const roleArray = member.roles.cache.map(r => r).join(' ');
+        const arrayRoll = ["1", "2"];
+        const randomRole = arrayRoll[Math.floor(Math.random()*arrayRoll.length)];
 
-        const embed = new EmbedBuilder()
-            .setColor(randColour)
-            .setAuthor({name: tag, iconURL : icon})
-            .setThumbnail(icon)
-            .addFields({name: "Member", value: `${user}`, inline:false})
-            .addFields({name: "Roles", value: `${member.roles.cache.map(r => r).join(' ')}`, inline:false})
-
-        await interaction.reply ({embeds: [embed]});
+        if(randomRole === "1"){
+            if(interaction.member.roles.cache.some(role => role.name === "NaughtyPatootie")){
+                await interaction.member.roles.remove("1303372723023777822");
+                await interaction.member.roles.add("1303372685547536475");
+                await interaction.reply ("Alright ... alright... I'm putting you on the cutie list");
+            } else if(interaction.member.roles.cache.some(role => role.name === "CutiePatootie")) {
+                await interaction.reply("You are already on the cutie list ! ");
+            } else {
+                await interaction.member.roles.add("1303372685547536475");
+                await interaction.reply ("You are a sweet beautiful child");
+            }
+        } else {
+            if(interaction.member.roles.cache.some(role => role.name === "CutiePatootie")){
+                await interaction.member.roles.remove("1303372685547536475");
+                await interaction.member.roles.add("1303372723023777822");
+                await interaction.reply ("SINCE YOU ARE COMPLAINING I'M PUTTING YOU ON THE NAUGHTY LIST");
+            } else if(interaction.member.roles.cache.some(role => role.name === "NaughtyPatootie")) {
+                await interaction.reply("You are already on the naughty list ! ");
+            } else {
+                await interaction.member.roles.add("1303372723023777822");
+                await interaction.reply ("You've been a terrible child, havent you ? ");
+                }
+            }
     }
 }
