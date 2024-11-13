@@ -24,7 +24,7 @@ module.exports = {
                     .setDescription(`I'm putting you on the cutie list 😇 !`)
                 await interaction.reply({embeds: [cutiePatootieEmbed], files: [picture]});
             } else if(interaction.member.roles.cache.some(role => role.name === "CutiePatootie")) {
-                const picture = new AttachmentBuilder("./assets/img/happymin.png")
+                const picture = new Attachgit  mentBuilder("./assets/img/happymin.png")
                 const cutiePatootieEmbed = new EmbedBuilder()
                     .setColor("DarkGreen")
                     .setThumbnail('attachment://happymin.png')
