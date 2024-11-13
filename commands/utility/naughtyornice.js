@@ -14,8 +14,8 @@ module.exports = {
 
         if(randomRole === "1"){
             if(interaction.member.roles.cache.some(role => role.name === "NaughtyPatootie")){
-                await interaction.member.roles.remove("1303372723023777822");
-                await interaction.member.roles.add("1303372685547536475");
+                await interaction.member.roles.remove("1306260412391493643");
+                await interaction.member.roles.add("1306260326219649155");
                 const picture = new AttachmentBuilder("./assets/img/happymin.png")
                 const cutiePatootieEmbed = new EmbedBuilder()
                     .setColor("DarkGreen")
@@ -32,7 +32,7 @@ module.exports = {
                     .setDescription(`You are already on the cutie list ! 😇`)
                 await interaction.reply({embeds: [cutiePatootieEmbed], files: [picture]});
             } else {
-                await interaction.member.roles.add("1303372685547536475");
+                await interaction.member.roles.add("1306260326219649155");
                 const picture = new AttachmentBuilder("./assets/img/happymin.png")
                 const cutiePatootieEmbed = new EmbedBuilder()
                     .setColor("DarkGreen")
@@ -45,8 +45,8 @@ module.exports = {
             }
         } else {
             if(interaction.member.roles.cache.some(role => role.name === "CutiePatootie")){
-                await interaction.member.roles.remove("1303372685547536475");
-                await interaction.member.roles.add("1303372723023777822");
+                await interaction.member.roles.remove("1306260326219649155");
+                await interaction.member.roles.add("1306260412391493643");
                 const picture = new AttachmentBuilder("./assets/img/ANGRY.png")
                 const naughtyPatootieEmbed = new EmbedBuilder()
                     .setColor("DarkRed")
@@ -63,7 +63,7 @@ module.exports = {
                     .setDescription(`You are already on the naughty list !` )
                 await interaction.reply({embeds: [naughtyPatootieEmbed], files: [picture]});
             } else {
-                await interaction.member.roles.add("1303372723023777822");
+                await interaction.member.roles.add("1306260412391493643");
                 const picture = new AttachmentBuilder("./assets/img/stinky.png")
                 const naughtyPatootieEmbed = new EmbedBuilder()
                     .setColor("DarkRed")
