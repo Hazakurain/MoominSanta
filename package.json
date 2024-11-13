@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["christmas", "bot"],
+  "author": "Tristan - Hazakurain",
   "license": "ISC",
   "description": "",
   "dependencies": {
