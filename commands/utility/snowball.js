@@ -4,7 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('snowball')
         .setDescription('Throw a snowball!')
-        .addUserOption(option => option.setName('target').setDescription('The user you want to throw a snowball to').setRequired(true)),
+        .addUserOption(option => option.setName('target').setDescription('The user you want to throw a snowball at').setRequired(true)),
 
 
     async execute(interaction) {
@@ -17,7 +17,7 @@ module.exports = {
             .setColor(randColour)
             .setThumbnail('attachment://tumblemin.gif')
             .setTitle(`Ready ... aim ... fire !`)
-            .setDescription(`${user} is throwing a snowball to ${target}`)
+            .setDescription(`${user} is throwing a snowball at ${target}`)
 
         await interaction.reply({embeds: [snowballEmbed], files: [picture]});
     }
