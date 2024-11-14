@@ -6,7 +6,7 @@ module.exports = {
         .setDescription('Use this command and receive a random cat picture !'),
 
     async execute(interaction) {
-        const diceNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+        const diceNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"];
         const randomRoll = diceNumber[Math.floor(Math.random()*diceNumber.length)];
         const colour = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
         const randColour = colour[Math.floor(Math.random() * colour.length)];
@@ -31,6 +31,11 @@ module.exports = {
             "18": { title: "You've been visited by Sniffing Rudius", description: "Oh what is this ? A phone ? Never saw that before" },
             "19": { title: "You've been visited by Cutie Kimo", description: "I can't handle so much cuteness." },
             "20": { title: "You've been visited by ...the Donkey Dog ?", description: "Eliott is about to steal your soul" },
+            "21": { title: "You've been visited by Ogre Wazzy", description: "It's all ogre." },
+            "22": { title: "You've been visited by Glue Sniffing Wazzy", description: "The secret of his weight loss." },
+            "23": { title: "You've been visited by the Wazzler", description: "How you doing ?" },
+            "24": { title: "You've been visited by Hunter Wazzy", description: "Training to catch its prey." },
+            "25": { title: "You've been visited by Family Man Wazzy", description: "A small game of Mysterium ?" },
         };
 
         async function sendCatPicture(interaction, number) {
